@@ -1,4 +1,4 @@
-# main keywords Questions
+# Main Keywords Questions
 
 
 * override / overload 
@@ -15,15 +15,12 @@
 * 예상문제 / 연습문제 
 
 
-# IO 
+# 알고리즘 작성을 위한 Java IO 
 ## 출력 
 ### System.out 
 * System.out.println();
 * System.out.printf("%d", n);
     * 실수형, 문자형 자료 출력 가능 
-
-### StringBuilder 
-* 출력해야 하는 것이 많은 경우에는, 매번 출력하는 것보다 <b> StringBuilder를 이용해 문자열을 만들고 한번에 출력</b>하는 것이 속도면에서 좋다. 
 ```java
 // 수행시간 3X, 메모리 3Y
 import java.util.Scanner;
@@ -37,6 +34,9 @@ puglic class Main{
     }
 }
 ```
+### StringBuilder 
+* 출력해야 하는 것이 많은 경우에는, 매번 출력하는 것보다 <b> StringBuilder를 이용해 문자열을 만들고 한번에 출력</b>하는 것이 속도면에서 좋다. 
+
 
 ``` java
 // 수행시간 X, 메모리 Y
