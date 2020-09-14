@@ -8,7 +8,7 @@
 - 해당 위치에 자료를 입력한 후 삽입연산을 마친다. 
 3) 삭제과정:
 - 삭제될 자료가 위치한 인덱스의 자료를 삭제한다. 
-- 삭제할 자료의 인덱스를 기준으로 이후의 자료들을 이동한느 연산을 수행한다. 
+- 삭제할 자료의 인덱스를 기준으로 이후의 자료들을 이동 연산을 수행한다. 
 - list 맨 마지막은 비어있는 상태로 삭제를 완료한다.
 4) 복잡도 
 시작 O(n), 끝 O(1), 중간 O(n)
@@ -163,6 +163,150 @@ class Node{
     }
 }
 ```
+
+```java
+package list 
+public class MyLinkedList{
+
+        private Node head;
+        private int size;
+        
+        public MyLinkedList(){
+            head = null;
+            size = 0;
+        }
+        
+        /**
+        * 특정 인덱스에 새로운 노드를 추가한다.
+        * @param index
+        * @param newNode
+        */
+        public void add(int index, Node newNode) {
+            //  첫 번째 노드인 경우 
+            Node nextNode = null;
+            if(index == 0){
+                if(this.head==null){
+                    this.head = new Node();
+                    this.head.setNext(newNode)
+                } else{
+                    nextNode = this.head.getNext();
+                    newNode.setNext(nextNode);
+                    this.head.setNext(newNode);
+                }
+            } else{
+                //  첫 번째 노드가 아닌 경우 
+                if(index < 0 || index > this.size-1) {throw new IndexOutOfBoundsException();}
+                
+                Node p = this.head;
+                
+                for(int i = 0; i < index-1; i++){
+                    p = p.getNext();
+                    
+                    if(index < this.size) nextNode = p.getNext();
+                    
+                }
+                
+                    if(nextNode != null) newNode.setNext(nextNode);
+                    
+                    p.setNext(newNode);
+            }
+            this.size++;
+        }
+        
+        /**
+        * 해당 index의 노드를 삭제한다.
+        * @param index
+        * @param node
+        */
+        public void remove(int index){
+            //
+            Node headNode = this.head;
+            if(headNode == null) {System.out.println("삭제할 데이터가 없습니다.");}
+            Node p = headNode;
+            for(int i = 0; i < index-1; i++){
+                p = p.getNext();
+            }
+            p.setNext(p.getNext().getNext());
+            this.size--;
+        }
+        
+       /**
+        * 마지막 노드를 리턴한다.
+        * @ return
+        */
+        
+        public Node get() {
+            if(this.head == null) throw new IndexOutOfBoundsException();
+            Node p = head;
+            
+            for(int i = 0; i < this.size; i++){
+                p = p.getNext();
+            }
+            return p;
+        }
+        public void printList(){
+            System.out.println("<LinkedList Data출력>");
+            if(this.head != null){
+                for(int i = 0; i < size; i++){
+                    p = p.getNext();
+                    if(p != null) System.out.print(p.getData(0 + ", ");
+                }   
+            }
+        }
+         /**
+        * @return the size
+        */
+        public int getSize(){
+            return size;
+        }
+         /**
+        * @param size the size to eat
+        */
+        public void setSize(int size){
+            this.size = size;
+        }
+}
+```
+
+```java
+package list;
+public class Node{
+    private Node next; 
+    private int data;
+    
+    /**
+    * @return the next
+    */
+    public Node getNext(){
+        return next;
+    }
+    
+    /**
+    * @param next the next to set
+    */
+    public void setNext(Node next) {
+        this.next = next;
+    }
+    
+    /**
+    * @return the data
+    */
+    public int getData(){
+        return data;
+    }
+    /**
+    * @param data the data to set
+    */
+    public void setData(int data){
+        this.data = data;
+    }
+    
+}
+
+```
+
+
+
 
 1. Array 를 기반으로 한 Linked List 구현 
 
