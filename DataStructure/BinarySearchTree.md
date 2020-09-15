@@ -38,7 +38,8 @@ public class BinarySearchTree {
         return this.root;
     }
 
-
+    // 삽입
+    // BST의 규칙에 맞게 삽입한다. 
     public void addNode(int key){
         if (findNode(key) != null) return;
 
@@ -72,6 +73,7 @@ public class BinarySearchTree {
         }
     }
 
+    // 삭제 
     public boolean deleteNode(int key){
           // focusNode와 parent가 같을 수 있는 경우는 찾으려는 key가 root인 경우 
           Node focusNode = root;
@@ -166,6 +168,8 @@ public class BinarySearchTree {
         return focusNode;
     }
     
+    // 순회 
+    
     public void inOrderTraverse(Node focusNode){
         if (focusNode != null){
             inOrderTraverse(focusNode.leftChild);
@@ -173,7 +177,7 @@ public class BinarySearchTree {
             inOrderTraverse(focusNode.rightChild);
         }
     }
-    
+    // 전위 (preorder) Depth First Search (깊이 우선 탐색, DFS)
     public void preOrderTraverse(Node focusNode){
         if (focusNode != null){
             System.out.print(focusNode.key + "  ");
@@ -189,6 +193,8 @@ public class BinarySearchTree {
         }
     }
     
+    // 탐색 
+    // 특정 값을 가진 노드의 탐색.비교과정에서 값이 더 작으면 왼쪽 자식쪽으로 내려가고 더 크면 오른쪽 자식쪽으로 내려간다. 
     public Node findNode(int key){
         // 트리가 비었을 때
         if (root == null) return null;
