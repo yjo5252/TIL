@@ -32,130 +32,196 @@ public class BinarySearchTree {
             return "key:" + this.key;
         }
     }
-    
-    public String toString(){
-        return "key:" + this.key;
+ 
+
+    public Node getRoot(){
+        return this.root;
     }
-}
-
-public Node getRoot(){
-    return this.root;
-}
 
 
-public void addNode(int key){
-    if (findNode(key) != null) return;
-    
-    Node newNode = new Node(key);
-    
-    if(root == null){
-        root = newNode; // 트리가 비어있으면 root에 삽입
-    } else{
-        Node focusNode = root; // 탐색용 노드
-        Node parent;           // 탐색용 노드의 부모 노드 
-        
-        while(true){
-            parent = focusNode; // 이동
-            
-            if (key < parent.key){             // 삽입하려는 키가 현재 노드보다 작으면
-                focusNode = parent.leftChild;  // 왼쪽으로 이동
-            
-                if (focusNode == null) {       // 왼쪽 노드가 비어있으면
-                    parent.leftChild = newNode;// 왼쪽 노드에 삽입
-                    return
+    public void addNode(int key){
+        if (findNode(key) != null) return;
+
+        Node newNode = new Node(key);
+
+        if(root == null){
+            root = newNode; // 트리가 비어있으면 root에 삽입
+        } else{
+            Node focusNode = root; // 탐색용 노드
+            Node parent;           // 탐색용 노드의 부모 노드 
+
+            while(true){
+                parent = focusNode; // 이동
+
+                if (key < parent.key){             // 삽입하려는 키가 현재 노드보다 작으면
+                    focusNode = parent.leftChild;  // 왼쪽으로 이동
+
+                    if (focusNode == null) {       // 왼쪽 노드가 비어있으면
+                        parent.leftChild = newNode;// 왼쪽 노드에 삽입
+                        return;
+                    }
+                } else{                             // 삽입하려는 키가 현재 노드보다 크면
+                     focusNode = parent.rightChild; //오른쪽으로 이동
+
+                     if(focusNode == null){         // 오른쪽 노드가 비어있으면
+                        parent.rightChild = newNode;// 오른쪽 노드에 삽입
+                        return;
+                     }
                 }
-            } else{                             // 삽입하려는 키가 현재 노드보다 크면
-                 focusNode = parent.rightChild; //오른쪽으로 이동
-                 
-                 if(focusNode == null){         // 오른쪽 노드가 비어있으면
-                    parent.rightChild = newNode;// 오른쪽 노드에 삽입
-                    return;
-                 }
             }
         }
     }
-}
 
-public boolean deleteNode(int key){
-      // focusNode와 parent가 같을 수 있는 경우는 찾으려는 key가 root인 경우 
-      Node focusNode = root;
-      Node parent = root;
-      boolean isLeftChild = true;
-      
-      // while 문이 끝나고 나면 focusNode는 삭제될 노드를 가리키고, parent는 삭제될 노드의 부모노드를 가리키게 되고, 
-      // 삭제될 노드의 부모노드의 left 인지 right인지 에 대한 정보를 가지게 된다.
-      while(focusNode.key != key){
+    public boolean deleteNode(int key){
+          // focusNode와 parent가 같을 수 있는 경우는 찾으려는 key가 root인 경우 
+          Node focusNode = root;
+          Node parent = root;
+          boolean isLeftChild = true;
+
+          // while 문이 끝나고 나면 focusNode는 삭제될 노드를 가리키고, parent는 삭제될 노드의 부모노드를 가리키게 되고, 
+          // 삭제될 노드의 부모노드의 left 인지 right인지 에 대한 정보를 가지게 된다.
+          while(focusNode.key != key){
+                parent = focusNode;
+
+                if(key < focusNode.key){
+                    isLeftChild = true;   // 지우려는 노드가 왼쪽에 있는 노드나 기록용
+                    focusNode = parent.leftChild;
+                } else{
+                    isLeftChild = false;
+                    focusNode = parent.rightChild;
+                }
+                //찾으려는 노드가 없는 경우 
+                if(focusNode == null) {
+                      return false;
+                }
+          }
+
+
+          Node replacementNode;
+          // 지우려는 노드의 자식 노드가 없는 경우 
+          if(focusNode.leftChild == null && focusNode.rightChild == null){
+              if(focusNode == root)
+                  root = null;
+              else if(isLeftChild)
+                  parent.leftChild = null;
+              else
+                  parent.rightChild = null;
+          }
+
+          // 지우려는 노드의 오른족 자식노드가 없는 경우(왼쪽 자식노드만 있는 경우)
+          else if(focusNode.rightChild == null){
+              replacementNode = focusNode.leftChild;
+
+              if(focusNode == root)
+                  root = replacementNode;
+               else if(isLeftChild);
+                  parent leftChild = replacementNode;
+               else
+                  parent.rightChild = replacementNode; 
+          }
+          //  지우려는 노드의 왼쪽 자식노드가 없는 경우 (오른쪽 자식 노드만 있는 경우)
+          else if(focusNode.leftChildNode == null){
+                replacementNode = focusNode.rightNode;
+
+                if(focusNode == root)
+                    root = replacementNode;
+                else if(isLeftChild)
+                    parent.leftChild = replacementNode;
+                else 
+                    parent.rightChild = replacementNode;
+          }
+          // 지우려는 노드의 양쪽 자식노드가 모두 있는 경우 
+          // 오른쪽 자식 노드의 sub tree에서 가장 작은 노드를 찾아서 지우려는 노드가 있던 자리에 위치시킨다. 
+          else{
+                Node rightSutbTree = focusNode.rightChild;    // 삭제될 노드의 오른쪽 sub tree를 저장해둔다. 
+                replacementNode = getRightNode(focusNode.rightChild); 
+
+                if (focusNode == root)
+                    root = replacementNode;
+                else if (isLeftChild)
+                    parent.leftChild = replacementNode;
+                else
+                    parent.rightChild = replacementNode;
+
+                replacementNode.rightChild = rightSubTree;
+                if(replacementNode == rightSubTree)   // 지우려는 노드의 오른쪽 subtree에 노드가 하나밖에 없는 경우
+                   replacementNode.rightChild = null;
+
+                replacementNode.leftChild = focusNode.leftChild;  // 지우려는 노드의 왼쪽 sub tree를 연결시킨다. 
+          }
+          
+          return true;
+    }
+    
+    private Node getRightMinNode(Node rightChildRoot){
+        Node parent = rightChildRoot;
+        Node focusNode = rightChildRoot;
+        
+        while(focusNode.leftChild != null){
             parent = focusNode;
-            
-            if(key < focusNode.key){
-                isLeftChild = true;   // 지우려는 노드가 왼쪽에 있는 노드나 기록용
-                focusNode = parent.leftChild;
-            } else{
-                isLeftChild = false;
-                focusNode = parent.rightChild;
-            }
-        //찾으려는 노드가 없는 경우 
-        if(focusNode == null) {
-              return false;
+            focusNode = focusNode.leftChild;
         }
-      }
-      
-      
-      Node replacementNode;
-      // 지우려는 노드의 자식 노드가 없는 경우 
-      if(focusNode.leftChild == null && focusNode.rightChild == null){
-          if(focusNode == root)
-              root = null;
-          else if(isLeftChild)
-              parent.leftChild = null;
-          else
-              parent.rightChild = null;
-      }
-      
-      // 지우려는 노드의 오른족 자식노드가 없는 경우(왼쪽 자식노드만 있는 경우)
-      else if(focusNode.rightChild == null){
-          replacementNode = focusNode.leftChild;
-
-          if(focusNode == root)
-              root = replacementNode;
-           else if(isLeftChild);
-              parent leftChild = replacementNode;
-           else
-              parent.rightChild = replacementNode; 
-      }
-      //  지우려는 노드의 왼쪽 자식노드가 없는 경우 (오른쪽 자식 노드만 있는 경우)
-      else if(focusNode.leftChildNode == null){
-            replacementNode = focusNode.rightNode;
-            
-            if(focusNode == root)
-                root = replacementNode;
-            else if(isLeftChild)
-                parent.leftChild = replacementNode;
-            else 
-                parent.rightChild = replacementNode;
-      }
-      // 지우려는 노드의 양쪽 자식노드가 모두 있는 경우 
-      // 오른쪽 자식 노드의 sub tree에서 가장 작은 노드를 찾아서 지우려는 노드가 있던 자리에 위치시킨다. 
-      else{
-            Node rightSutbTree = focusNode.rightChild;    // 삭제될 노드의 오른쪽 sub tree를 저장해둔다. 
-            replacementNode = getRightNode(focusNode.rightChild); 
-            
-            if (focusNode == root)
-                root = replacementNode;
-            else if (isLeftChild)
-                parent.leftChild = replacementNode;
-            else
-                parent.rightChild = replacementNode;
-                
-            replacementNode.rightChild = rightSubTree;
-            if(replacementNode == rightSubTree)   // 지우려는 노드의 오른쪽 subtree에 노드가 하나밖에 없는 경우
-               replacementNode.rightChild = null;
-               
-            replacementNode.leftChild = focusNode.leftChild;  // 지우려는 노드의 왼쪽 sub tree를 연결시킨다. 
-      }
+        
+        parent.leftChild = null;
+        return focusNode;
+    }
+    
+    public void inOrderTraverse(Node focusNode){
+        if (focusNode != null){
+            inOrderTraverse(focusNode.leftChild);
+            System.out.print(focusNode.key + " ");
+            inOrderTraverse(focusNode.rightChild);
+        }
+    }
+    
+    public void preOrderTraverse(Node focusNode){
+        if (focusNode != null){
+            System.out.print(focusNode.key + "  ");
+            preOrderTraverse(focusNode.leftChild);
+            preOrderTraverse(focusNode.rightChild);
+        }
+    }
+    public void postOrderTraverse(Node focusNode){
+        if(focusNode != null){
+           postOrderTraverse(focusNode.leftChild);
+           postOrderTraverse(focusNode.rightChild);
+           System.out.print(focusNode.key + " ");
+        }
+    }
+    
+    public Node findNode(int key){
+        // 트리가 비었을 때
+        if (root == null) return null;
+        
+        Node focusNode = root;
+        
+        while(focusNode.key != key){
+            if (key < focusNode.key){
+                focusNode = focusNode.leftChld;
+            } else{
+                focusNode = focusNode.rightchild;
+            }
+        
+        // 찾으려는 노드가 없을 때
+        if (focusNode == null)
+            return null;
+        }
+        return focusNode;
 }
-
-
+```
+```java
+public void BFS()
+{
+    Queue<Node> q = new LinkedList<>();
+    q.offer(root);
+    while(!q.isEmpty()) {
+        Node n = q.poll();
+        System.out.print(n.key + " ");
+        if (n.leftChild != null)
+            q.offer(n.leftChild);
+        if (n.rightChild != null)
+            q.offer(n.rightChild);
+    }
 }
 ```
 
