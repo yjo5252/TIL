@@ -120,6 +120,7 @@ class ListGraph{
   }
 }
 ```
+
 ```java
 public class AdjacencyList {
   public static void main(String[] args){
