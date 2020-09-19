@@ -1,6 +1,6 @@
 # JAVA
 
-1. 인접행렬로 그래프 구현하기 
+### 1. 인접행렬로 그래프 구현하기 
 * 그래프에 간선이 많이 존재하는 밀집 그래프 
 * 공간복잡도: O(V^2)
 ```java
@@ -150,10 +150,10 @@ public class AdjacencyList {
 }
 ```
 
-3. 깊이 우선 탐색
+### 3. 깊이 우선 탐색 (DFS)
 * Depth First Search (DFS)는 Stack으로 구성한다.
 
-4. 너비 우선 탐색
+### 4. 너비 우선 탐색
 * Breadth Firsth Search (BFS)는 Queue로 구성한다.
 ```java
 import java.util.ArrayDeque;
@@ -229,7 +229,8 @@ public class BreadthFirstSearch{
 ```
 
 
-
+### 5. Minimum Spanning Tree 
+Minimum Spanning Tree: 그래프 G의 spanning tree 중 edge weight의 합이 최소인 spanning tree
 
 
 
