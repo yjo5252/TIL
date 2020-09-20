@@ -1,5 +1,5 @@
 # JAVA
-- Queue 는 배열에 기반한 `Complete Binary Tree`이다. 
+- Heap는 배열에 기반한 `Complete Binary Tree`이다. 
 - 배열에 트리의 값을 넣어줄 때 1번 인덱스부터 루트노드가 시작된다. (노드의 고유번호 값과 배열의 index를 일치시켜 혼동을 줄이기 위해)
 - `Max Heap`은 각 노드의 값이 해당 children 의 값보다 크거나 같은 Complete Binary Tree를 발한다. 
 - `Max Heap`에서는 최대값을 찾는데 소요되는 연산의 시간복잡도가 O(1)이다. 
