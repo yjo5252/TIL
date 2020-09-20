@@ -158,6 +158,7 @@ public class AdjacencyList {
 * 그래프 내에 적은 숫자의 간선만을 갖니는 희소그래프(Sparse Graph)는 인접리스트를 사용하는 것이 유리하다. 
 
 <b>1)ArrayDequeue로 Queue </b>
+
 인접 행렬로 표현된 그래프의 너비우선탐색(BFS)의 시간 복잡도 : O(N+E)
 
 ```java
@@ -201,7 +202,7 @@ public class BreadthFirstSearch{
    
     // 발견된 정점을 표시하는 배열  (초깃값: false)
    static int[] discovered = new int[V];
-   static ArrayDeque<Integer> queue = new ArrayDequeu<>();   // 발견 정점 큐 
+   static ArrayDeque<Integer> queue = new ArrayDeque<>();   // 발견 정점 큐 
 
    queue.add(0);  // 큐의 끝에 추가
    discovered[0] = 1;  // 발견 표시
@@ -226,6 +227,7 @@ public class BreadthFirstSearch{
 ```
 
 <b> 2) LinkedList 로 Queue 구현 </b>
+
 인접 리스트로 표현된 그래프의 너비 우선탐색(BFS)의 시간 복잡도 : O(N^2)
 
 ```java
