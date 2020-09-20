@@ -32,8 +32,8 @@
 4. 그래프
 - 그래프의 정의
 - 그래프 구현방법
-- 깊이우선탐색(DFS)
-- 너비우선탐색(BFS)
+- [깊이우선탐색(DFS)](https://github.com/yjo5252/TIL/blob/master/DataStructure/DFS.md)
+- [너비우선탐색(BFS)](https://github.com/yjo5252/TIL/blob/master/DataStructure/BFS.md)
 - 연결성분 
 - 최소 스패닝 트리
 - Prim 알고리즘 
