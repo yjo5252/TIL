@@ -88,7 +88,7 @@ public class MyArrayList {
         for(int i = index-1; i < this.length-1; i++){
             this.data[i] = this.data[i+1];
         }
-        this.length==;
+        this.length--;
     }
     
      /**
