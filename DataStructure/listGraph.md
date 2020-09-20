@@ -201,22 +201,22 @@ public class BreadthFirstSearch{
    int node; 
    
    // 큐에 시작지점 추가 및 발견 표시 
-   queue.add(0);
+   queue.add(0);  // 큐의 끝에 추가
    discovered[0] = 1;
    
    while(queue.size()>0) {
      // 큐에 방문할 정점을 poll
-     node = queue.pollFirst();
+     node = queue.pollFirst(); // 큐의 앞에서 노드 추출
      
      System.out.println(node +1);
      
      if(adjList[node] != null) {
        // 인접정점들을 발견
-       for(int adjacent : adjList[node]){
+       for(int adjacent : adjList[node]){ // 큐에서 꺼낸 노드와 인접한 노드들을 모두 차례로 방문한다. 
          // 이미 발견된 정점이 아니라면
          if(discovered[adjacent] == 0){
             // 큐에 추가 및 발견 표시 
-            queue.add(adjacent);
+            queue.add(adjacent); // 큐의 끝에 추가 
             discovered[adjacent] = 1;
         }
       }
