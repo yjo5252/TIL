@@ -1,12 +1,12 @@
 # Java로 구현
 
-0. Array를 기반으로 한 ArrayList 구현
+### 1. Array를 기반으로 한 ArrayList 구현
 1) ArrayList 는 크기가 한정되어 있다. 
-2) 삽입과정: 
+2) 삽입과정: add(int data)
 - list의 크기를 삽입될 자료만큼 늘리는 연산을 수행한다. 
 - 삽입될 자료의 위치를 기준으로 기존의 데이터들을 뒤로 혹은 앞으로 이동하는 연산을 수행한다. 
 - 해당 위치에 자료를 입력한 후 삽입연산을 마친다. 
-3) 삭제과정:
+3) 삭제과정: remove(int index)
 - 삭제될 자료가 위치한 인덱스의 자료를 삭제한다. 
 - 삭제할 자료의 인덱스를 기준으로 이후의 자료들을 이동 연산을 수행한다. 
 - list 맨 마지막은 비어있는 상태로 삭제를 완료한다.
@@ -308,7 +308,7 @@ public class Node{
 
 
 
-1. Array 를 기반으로 한 Linked List 구현 
+### 2. Array 를 기반으로 한 Linked List 구현 
 
 
-2. ArrayList를 기반으로 한 LinkedList 구현
+### 3. ArrayList를 기반으로 한 LinkedList 구현
