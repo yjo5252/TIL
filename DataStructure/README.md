@@ -10,14 +10,14 @@
 - 큐의 응용 (버퍼)
 
 
-2. [선형 자료 구조](https://github.com/yjo5252/TIL/blob/master/DataStructure/Array%20vs%20LinkedList.md) 
+2. 선형 자료 구조
 
 - 배열
 - 배열의 응용 (다항식, 희소행렬)
 - 구조체
 - 포인터 (C 언어)
 - 동적메모리할당 (C 언어)
-- 배열 및 연결리스트로 구현된 리스트 
+- [배열 및 연결리스트로 구현된 리스트](https://github.com/yjo5252/TIL/blob/master/DataStructure/Array%20vs%20LinkedList.md)
 
 3. [트리](https://github.com/yjo5252/TIL/blob/master/DataStructure/BinarySearchTree.md)
 
@@ -27,7 +27,7 @@
 - 이진트리의 운행 
 - 이진트리의 응용 (수식표현 트리)
 - 이진트리의 응용 (디렉토리 용량계산)
-- 이진탐색트리 
+- [이진탐색트리(Binary Search Tree)](https://github.com/yjo5252/TIL/blob/master/DataStructure/BinarySearchTree.md) 
 
 4. 그래프
 - 그래프의 정의
