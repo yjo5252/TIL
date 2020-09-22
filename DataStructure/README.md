@@ -66,8 +66,8 @@
 7. 기타
 1) 우선순위 큐
 - 우선순위 큐 개념
-2) [힙](https://github.com/yjo5252/TIL/edit/master/DataStructure/Binary%20Heap.md)
-- 힙의 구현과 연산
+2) [힙]
+- [힙의 구현과 연산](https://github.com/yjo5252/TIL/blob/master/DataStructure/Binary%20Heap.md)
 - 힙 연산의 복잡도 분석
 - 힙 정렬 
 3) 해싱
