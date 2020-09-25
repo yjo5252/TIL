@@ -1,22 +1,15 @@
 # DataStructure
 
 자료구조 
-- [Stack / Queue](#1-큐-스택-데크)
-- [Array](#2-선형-자료-구조) 
+- [Array](#1-선형-자료-구조)
+- [Stack / Queue](#2-큐-스택-데크) 
 - [Tree / Binary Tree](#3-트리)
 - [Graph](#4-그래프) 
 - [Heap](#7-2-힙)
 - [HashSet/HashMap/HashTable/Dictionary](#7-3-해싱)
 
-### 1. 큐 스택 데크 
 
-- [스택의 구현 (배열 및 연결리스트)](https://github.com/yjo5252/TIL/blob/master/DataStructure/Stack.md)
-- 스택의 응용 (괄호감사와 수식계산)
-- 큐의 구현 (배열 및 연결리스트) 
-- 큐의 응용 (버퍼)
-
-
-### 2. 선형 자료 구조
+### 1. 선형 자료 구조
 
 - 배열
 - 배열의 응용 (다항식, 희소행렬)
@@ -24,6 +17,13 @@
 - 포인터 (C 언어)
 - 동적메모리할당 (C 언어)
 - [배열 및 연결리스트로 구현된 리스트](https://github.com/yjo5252/TIL/blob/master/DataStructure/Array%20vs%20LinkedList.md)
+
+### 2. 큐 스택 데크 
+
+- [스택의 구현 (배열 및 연결리스트)](https://github.com/yjo5252/TIL/blob/master/DataStructure/Stack.md)
+- 스택의 응용 (괄호감사와 수식계산)
+- 큐의 구현 (배열 및 연결리스트) 
+- 큐의 응용 (버퍼)
 
 ### 3. [트리](https://github.com/yjo5252/TIL/blob/master/DataStructure/BinarySearchTree.md)
 
