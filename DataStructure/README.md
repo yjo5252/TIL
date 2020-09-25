@@ -1,8 +1,8 @@
 # DataStructure
 
 자료구조 
-- [Array](#2-선형-자료-구조) 
 - [Stack / Queue](#1-큐-스택-데크)
+- [Array](#2-선형-자료-구조) 
 - [Tree / Binary Tree](#3-트리)
 - [Graph](#4-그래프) 
 - [Heap](#7-2-힙)
