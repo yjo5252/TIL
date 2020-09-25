@@ -1,12 +1,12 @@
 # DataStructure
 
 자료구조 
-- Array 
-- Stack / Queue
-- Tree / Binary Tree
-- Graph 
-- Heap
-- HashSet/HashMap/HashTable/Dictionary
+- [Array](선형-자료-구조) 
+- [Stack / Queue](1-큐-스택-데크)
+- [Tree / Binary Tree](3-트리)
+- [Graph](4-그래프) 
+- [Heap](7-2-힙)
+- [HashSet/HashMap/HashTable/Dictionary](7-3-해싱)
 
 1. 큐, 스택, 데크 
 
@@ -70,15 +70,19 @@
 
 
 7. 기타
-1) 우선순위 큐
+
+7-1. 우선순위 큐
 - 우선순위 큐 개념
-2) [힙]
+
+7-2. [힙]
 - [힙의 구현과 연산](https://github.com/yjo5252/TIL/blob/master/DataStructure/Binary%20Heap.md)
 - 힙 연산의 복잡도 분석
 - 힙 정렬 
-3) 해싱
+
+7-3. 해싱
 - 해싱 개념
 - 해시함수 
-4) 기타
+
+7-4. 기타
 - 오벌플러우 해결책 
 - 블룸필터 (확률적 자료구조)
