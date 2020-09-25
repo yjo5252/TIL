@@ -1,6 +1,12 @@
 # DataStructure
 
 자료구조 
+- Array 
+- Stack / Queue
+- Tree / Binary Tree
+- Graph 
+- Heap
+- HashSet/HashMap/HashTable/Dictionary
 
 1. 큐, 스택, 데크 
 
