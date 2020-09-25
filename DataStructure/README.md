@@ -1,12 +1,12 @@
 # DataStructure
 
 자료구조 
-- [Array](선형-자료-구조) 
-- [Stack / Queue](1-큐-스택-데크)
-- [Tree / Binary Tree](3-트리)
-- [Graph](4-그래프) 
-- [Heap](7-2-힙)
-- [HashSet/HashMap/HashTable/Dictionary](7-3-해싱)
+- [Array](#선형-자료-구조) 
+- [Stack / Queue](#1-큐-스택-데크)
+- [Tree / Binary Tree](#3-트리)
+- [Graph](#4-그래프) 
+- [Heap](#7-2-힙)
+- [HashSet/HashMap/HashTable/Dictionary](#7-3-해싱)
 
 1. 큐, 스택, 데크 
 
