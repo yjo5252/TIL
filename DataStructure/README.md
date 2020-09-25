@@ -8,7 +8,7 @@
 - [Heap](#7-2-힙)
 - [HashSet/HashMap/HashTable/Dictionary](#7-3-해싱)
 
-1. 큐, 스택, 데크 
+1. 큐 스택 데크 
 
 - [스택의 구현 (배열 및 연결리스트)](https://github.com/yjo5252/TIL/blob/master/DataStructure/Stack.md)
 - 스택의 응용 (괄호감사와 수식계산)
