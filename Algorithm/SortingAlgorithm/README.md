@@ -54,6 +54,67 @@
 1. 작은 값 배열 & 큰 값 배열 퀵정렬함수 재귀적으로 호출  
 1. 마지막으로 재귀호출의 결과를 다시 크기 순으로 합침 
 
+#### 1) Java
+```java
+public class QuickSorter{
+  public static void quickSort(int[] arr){
+    sort(arr, 0, arr.length-1);
+  }
+
+  private static void sort(int[] arr, int low, int high){
+    if (low >= high) return;
+
+    int mid = partition(arr, low, high);
+    sort(arr, low, mid-1);
+    sort(arr, mid, high);
+  }
+
+  private static int partition(int[] arr, int low, int high){
+    int pivot = arr[(low+high)/2];
+    while (low <= high){
+      while (arr[low] < pivot) low++;
+      while (arr[high] > pivot) high--;
+      if (low <= high) {
+        swap(arr, low, high);
+        low++;
+        high--;
+      }
+    }
+    return low;
+  }
+  private static void swap (int[] arr, int i, int j){
+    int tmp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = tmp;
+  }
+}
+```
+
+#### 2) python
+```python
+def quick_sort(arr):
+    def sort(low, high):
+        if high<= low:
+            return
+
+        mid = partition(low, high)
+        sort(low, mid-1)
+        sort(mid, high)
+
+    def partition(low, high):
+        pivot = arr[(low+high) // 2];
+        while low <= high:
+            while arr[low] < pivot:
+                low += 1
+            while arr[high] > pivot:
+                high -= 1
+            if low <= high:
+                arr[low], arr[high] = arr[high], arr[low]
+                low, high = low +1, high-1
+        return low
+
+    return sort(0, len(arr) -1)
+```
 
 
 https://www.daleseo.com/sort-quick/
