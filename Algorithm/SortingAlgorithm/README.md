@@ -23,6 +23,80 @@
 *  non-Comparisons Sorting Algorithm: <br>
 `Counting Sort`, `Radix Sort` 
 
+
+# Insertion Sort (삽입 정렬)
+#### Java 코드 
+```java
+public class InsertionSort{
+  public static void main(String[] args){
+      int [] arr = {10, 2, 6, 4, 3, 7, 5}
+      for(int i=1; i< arr.length; i++){
+          int standard = arr[i];  // 비교 기준
+          int aux = i-1; // 비교 대상
+          
+          while (aux >= 0 && standard < arr[aux]){
+              arr[aux + 1] = arr[aux]; // 비교 대상이 큰 경우 오른쪽으로 밀어냄
+              aux--;          
+          }
+          arr[aux+1] = standard; 
+      }
+      printArr(arr);
+  }
+  public static void printArr(intp] arr){
+      for (int i=0; i< arr.length; i++){
+          System.out.print(arr[i] + "");
+      }
+  }
+}
+```
+# Selection Sort
+가장 작은 값을 찾아서 교체한다.
+```java
+public void selectionSort(int[] array){
+  int size = array.legnth;
+  int i, j, min; 
+  
+  for (int i=0; i < size-1; i++){
+      min = i; 
+      for(j = i +1; j < size; j++){
+          if (array[j[ < array[min]{
+              min = j;
+          }
+      }
+      swap(array, min, i);
+      System.out.printf("\nSelectionSort %d 단계: ", i+1);
+      for(j = 0 ; j < size; j++) {
+          System.out.printf("%3d", array[j]);
+      }
+   }
+}
+public void swap (int[] array, int i, int j){
+  int temp = array[i]; 
+  array[i] = array[j]; 
+  array[j] = temp;
+}
+```
+
+### cf) 
+#### 1) Collections의 swap () 메소드 
+```java
+//public static void swap(List myList, int i, int j)
+ArrayList<String> myList = new ArrayList<String>();
+...
+Collections.swap(myList, 1,2);
+```
+#### 2) Array를 List로 바꾸기 
+```java
+String[] arr = {"a", "b", "c"};
+ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(arr));
+```
+#### 3) List 를 Array로 바꾸기 
+```java
+List<String> arrayList = Arrays.asList("a", "b", "c");
+String[] array = ArrayList.toArray(arrayList);
+```
+
+
 -----
 
 # Quick Sort 
