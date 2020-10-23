@@ -93,9 +93,81 @@ ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(arr));
 #### 3) List 를 Array로 바꾸기 
 ```java
 List<String> arrayList = Arrays.asList("a", "b", "c");
-String[] array = ArrayList.toArray(arrayList);
+String[] array = arrayList.ToArray(arrayList);
 ```
+# Merge Sort
+```java
+public static void mergeSort(int start, int end){
+    if (start < end){
+      int mid = (start + end) / 2; 
+      mergeSort(start, mid);
+      mergeSort(mid+1, end);
+      
+      int p = start; 
+      int q = mid + 1; 
+      int idx = p;
+      
+      while(p <= mid || q <= end){
+          if (q > end || (p <= mid && src[p] < src[q])){
+              tmp[idx++] = src[p++];
+          } else {
+              tmp[idx++] src[q++];
+          }
+      }
+      
+      for (int i = start; i <= end; i++)[
+          src[i] = tmp[i];
+      }
+    }
+}
+```
+```java
+public static int[] src;
+public static int[] tmp;
+public static void main(String[] argss){
+    src = new int[] {1, 9, 8, 5, 4, 2, 3, 7, 6};
+    tmp = new int[src.length];
+    printArray(src);
+    mergeSort(0, src.length-1);
+    printArray(src);
+}
+```
+# Heap Sort 
+```java
+package sort;
 
+public class HeapSort {
+    private static int[] data;
+    private static int number = 10;
+    
+    public static void heap(int[] data, int number){
+        for (int i=1; i < number; i++){
+            int child = i;
+            while(child > 0){
+              int parent = (child-1)/2;
+              if(data[child] > data[parent]){
+                  int temp = data[parent];
+                  data[parent] = data[child]; 
+                  data[child] = temp;
+              }
+             child = parent;
+            }
+        }
+    }
+    
+    public static void main(String[] args){
+        data = new int[number]; 
+        for(int =0; i < number; i++){
+              data[i] = (int)(Math.random() * 100);
+        }
+        
+        System.out.print("정렬 전:");
+        
+        
+    }
+
+}
+```
 
 -----
 
