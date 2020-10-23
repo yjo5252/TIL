@@ -268,3 +268,128 @@ https://www.daleseo.com/sort-quick/
 
 
 ### Radix Sort
+```java
+import java.io.*;
+import java.util.Stringtokenizer;
+
+class Bucket{
+    int data;
+    Bucket node;
+    
+    public Boolean isEmpty(){
+        if (this.node==null){
+            return true;
+        }
+        return false;
+    }
+    public int getData() {
+        return data;
+    }
+    
+    public void setData(int data){
+        this.data = data;
+    } 
+    
+    public Bucket getNode(){
+        return node;
+    }
+    
+    public void setNode(Bucket node){
+        this.node = nde;
+    }
+    
+    Bucket(int data){
+        thi.data = data;
+    }
+    
+    Bucket(Bucket node){
+        this.node = node;
+    }
+}
+
+public class RadixSort{
+    Bucket[] bucketArr = new Bucket[10];
+    Bucket[] data;
+    
+    void inputNumber() throws IOException{
+      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+      StringTokenizer st = new StringTokenizer(br.readLine().trim());
+      int n = Integer.parseInt(st.nextToken()); // n = 4
+
+      data = new Bucket[n];
+      /*
+      // 숫자 저장소 
+      data[0] = new Bucket(231);
+      data[1] = new Bucket(152);
+      data[2] = new Bucket(675);
+      data[3] = new Bucket(442);
+      */
+      for (int i=0; i<n; i++){
+          st = new StringTokenizer(br.readLine().trim());
+          data[i] = new Bucket(Integer.parseInt(st.nexToken()));
+      }
+    }
+
+    void sort() throws IOException{
+        inputNumber();
+        
+        Boolean keepGoing = true; 
+        int cnt = 1; 
+        int bucketNum = 0;
+        int index = 0; 
+        while (keepGoing){
+            keepGoing = false;
+            for(int i=0; i<data.length; i++){
+                int num = data[i].getData(); // Bucket에 Data 넣기 
+                for(int k=0; k < cnt ; k++){ 
+                    bucketNum = num % 10; // 자릿수 
+                    num /= 10;
+                }
+                if(bucketNum != 0){
+                    keepGoing = true;
+                }
+                if(bucketArr[bucketNum] == null){
+                    bucketArr[bucketNum] = data[i];
+                } esle{
+                    Bucket temp = data[i];
+                    Bucket head = bucketArr[bucketNum];
+                    while(head.node != null){
+                        head = head.node;//
+                    }
+                    head.node = temp;//
+                }
+            }
+            // Bucket 에서 순서대로 빼기 
+            index = 0;
+            for(int i=0; i<bucketArr.length; i++){
+                if (bucketArr[i] != null){
+                    Bucket temp = bucketArr[i];
+                    do{
+                        data[index] = temp;
+                        temp = temp.node;
+                        data[index++].node = null;
+                    } while(temp != null);
+                }
+            }
+            bucketInit();
+            cnt++;
+        }
+        display();
+    }
+    void bucketInit(){
+        for(int i=0; i<bucketArr.length; i++){
+            bucketArr[i] = null;
+        }
+    }
+    void display() thros IOExcpetion{
+        BufferedWriter bw = new BufferedWriter(new OuptutStreamWriter(System.out.));
+        for(int i=0; i<data.length;i++){
+            bw.write(String.valueOf(data[i].getData())+"\n");
+        }
+        bw.close();
+    }
+    public static void main(String[] args) throws IOException{
+        new RadixSort().sort();
+    }
+}
+```
