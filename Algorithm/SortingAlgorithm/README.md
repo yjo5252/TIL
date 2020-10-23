@@ -24,31 +24,7 @@
 `Counting Sort`, `Radix Sort` 
 
 
-# Insertion Sort (삽입 정렬)
-#### Java 코드 
-```java
-public class InsertionSort{
-  public static void main(String[] args){
-      int [] arr = {10, 2, 6, 4, 3, 7, 5}
-      for(int i=1; i< arr.length; i++){
-          int standard = arr[i];  // 비교 기준
-          int aux = i-1; // 비교 대상
-          
-          while (aux >= 0 && standard < arr[aux]){
-              arr[aux + 1] = arr[aux]; // 비교 대상이 큰 경우 오른쪽으로 밀어냄
-              aux--;          
-          }
-          arr[aux+1] = standard; 
-      }
-      printArr(arr);
-  }
-  public static void printArr(intp] arr){
-      for (int i=0; i< arr.length; i++){
-          System.out.print(arr[i] + "");
-      }
-  }
-}
-```
+
 # Selection Sort
 가장 작은 값을 찾아서 교체한다.
 ```java
@@ -59,7 +35,7 @@ public void selectionSort(int[] array){
   for (int i=0; i < size-1; i++){
       min = i; 
       for(j = i +1; j < size; j++){
-          if (array[j[ < array[min]{
+          if (array[j] < array[min]{
               min = j;
           }
       }
@@ -95,6 +71,33 @@ ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(arr));
 List<String> arrayList = Arrays.asList("a", "b", "c");
 String[] array = arrayList.ToArray(arrayList);
 ```
+
+# Insertion Sort (삽입 정렬)
+#### Java 코드 
+```java
+public class InsertionSort{
+  public static void main(String[] args){
+      int [] arr = {10, 2, 6, 4, 3, 7, 5}
+      for(int i=1; i< arr.length; i++){
+          int standard = arr[i];  // 비교 기준
+          int aux = i-1; // 비교 대상
+          
+          while (aux >= 0 && standard < arr[aux]){
+              arr[aux + 1] = arr[aux]; // 비교 대상이 큰 경우 오른쪽으로 밀어냄
+              aux--;          
+          }
+          arr[aux+1] = standard; 
+      }
+      printArr(arr);
+  }
+  public static void printArr(intp] arr){
+      for (int i=0; i< arr.length; i++){
+          System.out.print(arr[i] + "");
+      }
+  }
+}
+```
+
 # Merge Sort
 ```java
 public static void mergeSort(int start, int end){
