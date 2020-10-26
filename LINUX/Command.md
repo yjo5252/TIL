@@ -10,6 +10,59 @@ $cd ~  or $cd $HOME or $cd // 사용자 홈 디렉토리로 이동
 $cd - // 이전 경로로 이동 
 $cd ~계정명 // 입력한 사용자의 홈 디렉토리로 이동 
 ```
+### cmp
+몇 행의 몇 번째 문자가 다른가를 확인한다. 두 파일이 동일한가를 확인한다. 
+```
+cmp file1 file2
+    
+    file1 file2 differ: byte 7, line 1 ! 첫번째행에 7바이트째부터 다름이 발생한다. 
+```
+
+### comm
+지정한 두 파일의 행과 행을 비교할 때에 사용하는 명령어 
+* 옵션
+    * -1: 두 파일을 비교하여 첫번째 파일과 두 번째 파일의 내용과 공통내용만을 출력
+    * -2: 두번째 파일과 다른 부분의 첫번째 파일내용과 공통내용을 출력 
+    * -3: 두 파일의 공통된 파일은 출력하지 않음 
+```
+comm file1 file2 
+
+      girls Generation
+girls generation
+                uzuro.com
+uzzuzzu
+```
+
+### diff
+실행결과 차이점이 없다면 0, 차이점이 있다면 1, 실행 시 에러가 발생하면 2 이상의 종료카드 값을 얻는다. 
+* 옵션
+   - --brief: 단순히 같은가 다른가를 확인 
+   - -c: 지정된 포맷으로 두 파일의 차이점을 출력 
+   - -d: 가장 작은 변화된 부분까지도 찾기 위해 알고리즘 변경 
+```
+diff file1 fiel2
+
+  1c1 
+  < girls generation 
+  ---
+  > girls Generation 
+```
+
+### diff3
+3개의 파일차이점을 비교하여 출력하는 명령어이다. 
+* 옵션
+  - --text : 비교할 파일이 바이너리 파일인 경우 가능한 텍스트 포맷을 찾아서 비교작업을 수행한다. 
+```java
+diff3 file1 file2 file3
+1:1c 
+  girls generation
+  
+2:1c
+  girls Generation 
+  
+3:1c
+  girls geNeration
+```
 
 ### fiel 명령어
 지정된 파일의 종류(타입)을 확인하는 명령어이다. file은 /usr/share/file 디렉토리의 magic 파일을 참조하여 파일종류를 표시해준다. 
