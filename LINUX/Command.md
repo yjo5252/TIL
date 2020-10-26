@@ -64,7 +64,7 @@ diff3 file1 file2 file3
   girls geNeration
 ```
 
-### fiel 명령어
+### fil 명령어
 지정된 파일의 종류(타입)을 확인하는 명령어이다. file은 /usr/share/file 디렉토리의 magic 파일을 참조하여 파일종류를 표시해준다. 
 * 옵션 
    * -C: 매직파일의 포맷을 검사하는 옵션
