@@ -92,8 +92,27 @@ ifconfig lo up  // 인터페이스 활성화
 service network stop // 네트워크에 연결된 모든 인터페이스가 비활성화 
 service network start // 네트워크에 연결된 모든 인터페이스가 활성화
 
-
 ```
+### tar (Tape ARchive)
+- 여러 파일을 묶어서 하나로 만드는 기능 
+- 압축은 하지 않음. (compress나 gzip과 같이 사용 가능) 
+    - c: create
+    - x: extract (풀어줌0
+    - t: list (묶인 파일 내에 어떠한 파일들이 들어가는 지 보여줌)
+    - v: verbose (긴 출력 정보 제공)
+    - f: 파일 이름
+``` linux
+$ ls
+foo.txt bar.txt
+$ tar cvf files.tar foo.txt bar.txt
+$ ls
+foo.txt bar.txt fiels.tar
+$ tar xvf files.tar
+$ ls
+foo.txt bar.txt
+```
+
+
 
 ### type
 type은 지정된 명령어가 쉘에 내장된 명령어인지, 외부명령어인지, 앨리어스 명령어인지 등을 확인하는 명령어이다.
