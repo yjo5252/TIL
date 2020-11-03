@@ -97,7 +97,7 @@ service network start // 네트워크에 연결된 모든 인터페이스가 활
 - 여러 파일을 묶어서 하나로 만드는 기능 
 - 압축은 하지 않음. (compress나 gzip과 같이 사용 가능) 
     - c: create
-    - x: extract (풀어줌0
+    - x: extract (풀어줌)
     - t: list (묶인 파일 내에 어떠한 파일들이 들어가는 지 보여줌)
     - v: verbose (긴 출력 정보 제공)
     - f: 파일 이름
@@ -112,8 +112,6 @@ $ ls
 foo.txt bar.txt
 ```
 
-
-
 ### type
 type은 지정된 명령어가 쉘에 내장된 명령어인지, 외부명령어인지, 앨리어스 명령어인지 등을 확인하는 명령어이다.
 ``` bash 
@@ -121,3 +119,40 @@ type cp
 
   cp is aliased to `cp -i'
 ```
+
+### (un)compress / gzip 
+* compress: 확장자 .Z로 파일을 압축 
+```
+$ compress keynote
+$ ls
+keynote.Z
+```
+* uncompress
+```
+$ uncompress keynote.Z
+```
+* zcat
+```
+$ zcat turkey.Z
+```
+* zmore
+```
+$ zmore turkey.Z
+```
+* gazip (GNU zip) : 표준 compress보다 압축률이 좋음
+```
+$ gzip foo.txt
+$ gzip -d foo.txt.gz
+```
+
+### w (who)
+* Usage: w [options] [user name]
+    * 현재 시스템을 사용중인 사용자들에 대한 정보를 출력한다. 
+    
+
+
+
+
+
+
+
