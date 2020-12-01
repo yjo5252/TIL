@@ -150,7 +150,9 @@ $ gzip -d foo.txt.gz
     * 현재 시스템을 사용중인 사용자들에 대한 정보를 출력한다. 
     
 
+### grep pattern 
 
+### find -option file -comand
 
 
 
