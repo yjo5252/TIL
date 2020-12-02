@@ -153,8 +153,14 @@ $ gzip -d foo.txt.gz
 ### grep pattern 
 
 ### find -option file -comand
+```
+$ find . -name rdstat -print 
+./stat/rdstat
+```
+query :  rdstat라는 이름의 파일의 절대 경로를 출력한다
+result : 현재 dir 아래 "어느 subdir" 아래에 있다. 
 
-
-
-
-
+```
+$ find -mtime +30 -ok rm  {}\; 
+```
+30일보다 이전에 수정했던 파일들 찾아서 yes 하면 삭제 
