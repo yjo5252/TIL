@@ -139,24 +139,24 @@ Ctrl + A, Ctrl + E, Ctrl + P, Ctrl  + N, Alt +V, Ctrl + V, Ctrl + K, Ctrl + Y, C
   
 #### * 패키지 설치 
 * yum 
-- 로그 파일 위치 : /var/log/yum.log 
-- Fedora 또는 CentOS에서 사용가능 (Redhat 계열 0) 
-: -y, info, list, install, update, remove, groupinstall, grouplist
+  - 로그 파일 위치 : /var/log/yum.log 
+  - Fedora 또는 CentOS에서 사용가능 (Redhat 계열 0) 
+  - -y, info, list, install, update, remove, groupinstall, grouplist
 
 * rpm
-- rpm 패키지 구조 : pkg 이름 pkg버전 pkg릴리즈 아키텍처 확장자 
-: -i, -U, -e, -qa, -qd, -V, --test
+   - rpm 패키지 구조 : pkg 이름 pkg버전 pkg릴리즈 아키텍처 확장자 
+  - -i, -U, -e, -qa, -qd, -V, --test
 
 * 검증 옵션 
-S, M, L, U, G
+  S, M, L, U, G
 
 * apt-get 
-: 데비안에서 제공되는 명령행 기반의 유틸리티 
-- 의존성 및 추동성을 해결하기 위해 관련 정보를 기록하는 파일 : /etc/apt/sources.list
-- --purge, clean 
+  - 데비안에서 제공되는 명령행 기반의 유틸리티 <BR>
+  - 의존성 및 추동성을 해결하기 위해 관련 정보를 기록하는 파일 : /etc/apt/sources.list
+  - --purge, clean 
 
 * dpkg 
-: -r 패키지 삭제 
+  : -r 패키지 삭제 
 
 
 
