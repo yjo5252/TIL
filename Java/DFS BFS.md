@@ -42,7 +42,7 @@ class Graph{
 		while (!queue.isEmpty()) {
 			// 방문한 노드를 큐에서 추출(dequeue)하고 값을 출력
 			s = queue.poll();
-			System.out.println(s + " ");
+			System.out.print(s + " ");
 			
 			// 방문한 노드와 인접한 모든 노드를 가져온다.
 			Iterator <Integer> i = adj[s].listIterator();
