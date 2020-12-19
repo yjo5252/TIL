@@ -17,7 +17,7 @@ sys.path.insert(0, my_path)
 
 import pip
 
-!pip install --target=$my_path scikit-learn 
+!pip install --target=$my_path jdc # java dynamic class 
 
 ```
 
@@ -40,7 +40,7 @@ platform.platform()
 ```
 
 #### * 
-
+scipy, numpy, pandas 파이썬 패키지 & scikit-learn, tnesorflow 머신러닝 라이브러리 설치되어 있음
 
 
 
