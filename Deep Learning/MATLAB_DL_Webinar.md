@@ -1,7 +1,7 @@
 # MATLAB_DL_Webinar
 
 ## 1. 영상 분석을 위한 딥러닝 
-(2021.7.7) [영상 분석을 위한 딥러닝 유튜브]()
+(2021.7.7) [영상 분석을 위한 딥러닝 유튜브](https://youtu.be/Xv8sDZq6_jk)
 
 [MATLAB Deep Learning - GitHub](https://github.com/matlab-deep-learning)
 
