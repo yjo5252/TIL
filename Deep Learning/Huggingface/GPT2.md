@@ -5,6 +5,7 @@
 * a causal (unidirectional) transformer pretrained using language modeling on a very large corpus of ~40 GB of text data.
 
 ## How to reuse the past in generative model? 
+* [reference link](https://huggingface.co/transformers/v2.9.1/quickstart.html#using-the-past)
 * GPT-2  make use of a `past` or `mems` attribute 
   * this attribute can be used to prevent re-computing the key/value pairs when using sequential decoding. 
   * It is useful when generating sequences 
