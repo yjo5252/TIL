@@ -52,3 +52,31 @@ tensor([[ 1],
         [ 4]])
 
 ```
+
+### Profiler x Pytorch 
+* remember to remove it if you are benchmarking runtimes
+* profiler is best used for investigating code 
+```python
+# Performance debugging using Pytorch 
+
+import torch 
+import numpy as np
+from torch import nn 
+import torch.autograd.profiler as profiler 
+
+class MyModule(nn.Module):
+    def __init__(self, in_features: int, out_features: int, bias: bool = True):
+        super(MyModule, self).__init__()
+        self.linear = nn.Linear(in_features, out_features, bias)
+
+    def forward(self, input, mask):
+        with profiler.record_function("LINEAR PASS"):
+            out = self.linear(input)
+        
+        with profiler.record_function(" INDICES"):
+            threshold = out.sum(axis=1).mean().item()
+            hi_idx = np.argwhere(mask.cpu().numpy() > threshold)
+            hi_idx = torch.from_numpy(hi_idx).cuda()
+
+        return out, hi_idx
+```
