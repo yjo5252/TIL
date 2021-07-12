@@ -26,7 +26,7 @@
   * 레이어 1개마다 wegith matrix가 정해져서 업데이트 되고 
   * MLP (fully-connected layout)이 사용된다. 
 
-* GNN의 응용 
+* GNN의 응용 takss
   * VQA : 이미지(책상 위에 물건)을 보고 무엇인지 text로 답변
   * Recommended System : 추천시스템 
   * 분자식 입력 - 향 예측 
