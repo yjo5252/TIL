@@ -43,7 +43,9 @@
 ### Features 
 * Interactive kernel profiler
 * Profiler report for kernels and/or child process
-
-
-
-* kernel 
+* Diff'ing results across one or multiple reports using baselines
+* Roofline Analysis to visualize performance headroom
+* Fast data collection 
+* Intuitive UI for interactive profiling
+* Command line operation for manual and automated profiling 
+* Fully customizable reports and rules
