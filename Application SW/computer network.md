@@ -139,3 +139,76 @@
     * 정지-대기 (stop and Wait), 슬라이딩 윈도우 (Sliding Window)
 
 * 오류 제어: 전송중에 발생하는 오류를 검출하고 정정하여 데이터나 제어 정보의 파손에 대비하는 기능이다. (Error Control.)
+
+### TCP / IP 구조 
+* TCP/IP는 응용 계층, 전송 계층, 인터넷 계층, 네트워크 계ㅡㅊㅇ으로 이루어져 있다. 
+1. 응용 계층 
+    * 응용 프로그램 간의 데이터 송 수신 제공 
+    * TELNET, FTP, SMTP, SNMP, DNS, HTTP
+2. 전송 계층
+    * 호스트들 간의 신뢰성 있는 통신 제공 
+    * TCP, UDP 
+3. 인터넷 계층 
+    * 데이터 전송을 위한 주소 지정, 경로 설정을 제공 
+    * IP, ICMP, IGMP, ARP, RARP
+4. 네트워크 액세스 계층 
+    * 실제 데이터 (프레임)를 송, 수신하는 역할
+    * Ethernet, IEEE 802, HDLC, X25, RS-232C, ARQ 등 
+
+### 응용계층의 주요 프로토콜 
+1. FTP (File Transfer Protocol) : 컴퓨터-컴퓨터 or 컴퓨터-인터넷 사이에서 파일을 주고받을 수 있도록 하는 원격 파일 전송 프로토콜 
+2. SMTP (Simple Mail Transfer Protocol) : 전자 우편을 교환하는 서비스
+3. TELNET : 멀리 떨어져 있는 컴퓨터에 접속하여 자신의 컴퓨터처럼 사용할 수 있도록 해준다. 프로그램을 실행할 수 있는 가상의 터미널 기능을 수행함.
+4. SNMP (Single Network Management Protocol): TCP/IP의 네트워크 관리 프로토콜로, 라우터나 허브 등 네트워크 기기의 네트워크 정보를 네트워크 관리 시스템에 보내는 데 사용되는 표준 통신 규약
+5. DNS (Domain Name System): 도메인 네임을 IP 주소로 매핑(Mapping)하는 시스템
+6. HTTP (HyperText Transfer Protocol): 월드 와이드 웹(WWW)에서 HTML 문서를 송수신하기 위한 표준 프로토콜
+
+### 전송 계층 주요 프로토콜 
+1. TCP (Transmission Control Protocol)
+    * 양방향 (full duplex connection) 형 서비스를 제공한다. 
+    * 가상 회선 (virtual circuit connection) 형태의 서비스를 제공한다.
+    * 스트림 위주의 전달(패킷 단위)을 한다.
+    * 신뢰성 있는 경로를 확립하고 메시지 전송을 감독한다. 
+    * 순서 제어, 오류 제어, 흐름 제어 기능
+    * 패킷의 분실, 손상, 지연이나 순서가 틀린 것 등이 발생할 때 투명성이 보장되는 통신을 제공한다.
+    * 메시지를 encapsulation, decapsulation gksek. 
+    * 서비스 처리를 위해 multiplexing, demultiplexing 을 이용한다.
+    * 전이중 서비스와 스트림 데이터 서비스를 제공한다.
+
+2. UDP (User Datagram Protocol)
+    * 데이터 전송 전에 연결을 설정하지 않는 비연결형 서비스를 제공한다.
+    * TCP에 비해 상대적으로 단순한 헤더구조. 오버헤드가 적다.
+    * 고속의 안정성있는 전송 매체를 사용하여 빠른 속도를 필요로 하는 경우/ 동시에 여러 사용자에게 데이터를 전달하는 경우/ 정기적으로 반복해서 전송할 경우에 사용한다.
+    * UDP 헤더에는 Source Port Number, Destination Prot Number, Length, Checksum 등이 포함된다. 
+3. RTCP (Real-Time Control Protocol)
+    * RTP (Real Time Transport Protocol) 패킷의 전송 품질을 제어하기 위한 제어 프로토콜이다.
+    * 세션(Session)에 참여한 각 참여자들에게 주기적으로 제어 정보를 전송한다.
+    * 하위 프로토콜은 데이터 패킷과 제어 패킷의 다중화(Multiplexing)를 제공한다.
+    * 데이터 전송을 모니터링하고 최소한의 제어와 인증 기능만을 제공한다. 
+    * RTCP 패킷은 항상 32 비트의 경계로 끝낸다.
+
+### 인터넷 계층의 주요 프로토콜 
+1. IP (Internet Protocol)
+    * 전송할 데이터 주소를 지정하고 경로를 설정하는 기능을 한다. 
+    * 비연결형 데이터그램 방식을 사용하는 것으로 신뢰성이 보장되지 않는다.
+2. ICMP (Internet Control Message Protocol)
+    * IP와 조합하여 통신 중에 발생하는 오류의 처리와 전송 경로 변경 등을 위한 제어 메시지를 관리하는 역할을 하며, 헤더는 8 Byte로 구성한다.
+3. IGMP (Internet Group Message Protocol)
+    * 멀티 캐스트를 지원하는 호스트나 라우터 사이에서 멀티캐스트 그룹 유지를 위해 사용된다.
+4. ARP (Address Resolution Protocol)
+    * 호스트의 IP 주소를 호스트와 연결된 네트워크 접속 장치의 물리적 주소 (MAC Address)로 바꾼다.
+5. RARP (Reverse Address Resolution Protocol)
+    * ARP와 반대로 물리적 주소를 IP 주소로 변환하는 기능을 한다.
+
+
+### 네트워크 액세스 계층의 주요 프로토콜
+1. Ethernet (IEEE 802.3) 
+    * CSMA/CD 방식의 LAN 
+2. IEEE 802 
+    * LAN을 위한 표준 프로토콜 
+3. HDLC
+    * 비트 위주의 데이터 링크 제어 프로토콜
+4. X.25 
+    * 패킷 교환망을 통한 DTE와 DCE 간의 인터페이스를 제공하는 프로그램 
+5. RS-232C 
+    * 공중 전화 교환망(PSTN)을 통한 DTE나 DCE 간의 인터페이스를 제공하는 프로토콜
