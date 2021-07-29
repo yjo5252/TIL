@@ -80,3 +80,28 @@ class MyModule(nn.Module):
 
         return out, hi_idx
 ```
+
+### PyTorch Backpropagation
+Example
+```python
+import torch 
+
+x = torch.tensor(1.0)
+y = torch.tensor(2.0)
+
+w = torch.tensor(1.0, requires_grad=True)
+
+# forward pass and compute the loss 
+y_hat = w * x 
+loss = (y_hat - y)**2
+
+print(loss)
+
+# backward pass 
+## 1. Calculate local gradients 
+## 2. Compute dLoss / dWeights using the Chain Rule
+loss.backward()
+
+### update weights 
+### next forward and backward pass.
+```
